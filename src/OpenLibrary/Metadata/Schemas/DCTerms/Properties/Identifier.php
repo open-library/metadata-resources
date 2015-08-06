@@ -6,13 +6,13 @@
      * Time: 5:49 PM
      */
 
-    namespace OpenLibrary\Metadata\Schemas\DC\Properties;
+    namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
 
-    use OpenLibrary\Metadata\Schemas\DC\Property;
+    use OpenLibrary\Metadata\Schemas\DCTerms\Property;
 
     class Identifier extends Property
     {
-        protected $uri = "http://purl.org/dc/elements/1.1/identifier";
+        protected $uri = "identifier";
 
         protected $label = "Identifier";
 

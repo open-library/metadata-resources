@@ -1,30 +1,36 @@
 <?php
+    /**
+     * Created by PhpStorm.
+     * User: skhanker
+     * Date: 15/07/2015
+     * Time: 5:49 PM
+     */
 
-    namespace OpenLibrary\Metadata\Schemas\DC\Properties;
+    namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
 
-    use OpenLibrary\Metadata\Schemas\DC\Property;
+    use OpenLibrary\Metadata\Schemas\DCTerms\Property;
 
     /**
-     * Class Date
+     * Class Title
      *
-     * @package OpenLibrary\Metadata\Schemas\DC\Properties
+     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
-    class Date extends Property
+    class Title extends Property
     {
         /**
          * @var string
          */
-        protected $uri = "http://purl.org/dc/elements/1.1/date";
+        protected $uri = "title";
 
         /**
          * @var string
          */
-        protected $label = "Date";
+        protected $label = "Title";
 
         /**
          * @var string
          */
-        protected $name = "date";//becomes dc.contributor
+        protected $name = "title";//becomes dc.contributor
 
         /**
          * @param            $value

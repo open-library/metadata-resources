@@ -1,22 +1,22 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\DC;
+    namespace OpenLibrary\Metadata\Schemas\DCTerms;
 
     class Property {
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+        protected $uri = "http://purl.org/dc/terms/";
 
         protected $label = "";
 
-        protected $name = "dc";
+        protected $name = "dcterms";
 
-        protected $description = "A Dublin Core Elements Property";
+        protected $description = "A Dublin Core Terms Property";
 
         protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
-                $this->uri = $uri;
+                $this->uri .= "{$uri}";
             }
 
             if($name){

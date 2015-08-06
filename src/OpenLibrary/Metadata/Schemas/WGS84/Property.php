@@ -1,22 +1,22 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\DC;
+    namespace OpenLibrary\Metadata\Schemas\WGS84;
 
     class Property {
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+        protected $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
 
         protected $label = "";
 
-        protected $name = "dc";
+        protected $name = "wgs84_pos";
 
-        protected $description = "A Dublin Core Elements Property";
+        protected $description = "Basic Geo (WGS84 Lat/Long) Property";
 
         protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
-                $this->uri = $uri;
+                $this->uri .= "{$uri}";
             }
 
             if($name){

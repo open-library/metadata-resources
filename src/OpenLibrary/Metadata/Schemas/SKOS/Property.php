@@ -1,22 +1,22 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\DC;
+    namespace OpenLibrary\Metadata\Schemas\SKOS;
 
     class Property {
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+        protected $uri = "http://www.w3.org/2009/08/skos-reference/skos.html#";
 
         protected $label = "";
 
-        protected $name = "dc";
+        protected $name = "skos";
 
-        protected $description = "A Dublin Core Elements Property";
+        protected $description = "Simple Knowledge Organisation System";
 
         protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
-                $this->uri = $uri;
+                $this->uri .= "{$uri}";
             }
 
             if($name){

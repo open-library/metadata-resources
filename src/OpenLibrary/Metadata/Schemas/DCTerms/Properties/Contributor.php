@@ -1,30 +1,30 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\DC\Properties;
+    namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
 
-    use OpenLibrary\Metadata\Schemas\DC\Property;
+    use OpenLibrary\Metadata\Schemas\DCTerms\Property;
 
     /**
-     * Class Date
+     * Class Contributor
      *
-     * @package OpenLibrary\Metadata\Schemas\DC\Properties
+     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
-    class Date extends Property
+    class Contributor extends Property
     {
         /**
          * @var string
          */
-        protected $uri = "http://purl.org/dc/elements/1.1/date";
+        protected $uri = "contributor";
 
         /**
          * @var string
          */
-        protected $label = "Date";
+        protected $label = "Contributor";
 
         /**
          * @var string
          */
-        protected $name = "date";//becomes dc.contributor
+        protected $name = "contributor";//becomes dc.contributor
 
         /**
          * @param            $value

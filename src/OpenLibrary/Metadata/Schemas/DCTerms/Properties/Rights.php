@@ -6,17 +6,17 @@
      * Time: 5:49 PM
      */
 
-    namespace OpenLibrary\Metadata\Schemas\DC\Properties;
+    namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
 
-    use OpenLibrary\Metadata\Schemas\DC\Property;
+    use OpenLibrary\Metadata\Schemas\DCTerms\Property;
 
-    class Identifier extends Property
+    class Rights extends Property
     {
-        protected $uri = "http://purl.org/dc/elements/1.1/identifier";
+        protected $uri = "rights";
 
-        protected $label = "Identifier";
+        protected $label = "Rights";
 
-        protected $name = "identifier";//becomes dc.contributor
+        protected $name = "rights";//becomes dc.contributor
 
         public function __construct($value,$label = false){
             if(!$label){

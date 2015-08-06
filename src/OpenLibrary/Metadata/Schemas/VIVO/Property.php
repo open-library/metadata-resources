@@ -1,22 +1,22 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\DC;
+    namespace OpenLibrary\Metadata\Schemas\VIVO;
 
     class Property {
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+        protected $uri = "http://vivoweb.org/ontology/core#";
 
         protected $label = "";
 
-        protected $name = "dc";
+        protected $name = "vivo";
 
-        protected $description = "A Dublin Core Elements Property";
+        protected $description = "A VIVO Property";
 
         protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
-                $this->uri = $uri;
+                $this->uri .= "{$uri}";
             }
 
             if($name){
