@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\EDM;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://www.europeana.eu/schemas/edm/";
+    class Property extends AbstractProperty {
 
-        protected $label = "";
+        private $uri = "http://www.europeana.eu/schemas/edm/";
 
-        protected $name = "edm";
+        private $label = "";
 
-        protected $description = "A Europeana Data Model Property";
+        private $name = "edm";
 
-        protected $value;
+        private $description = "A Europeana Data Model Property";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\DCTerms;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://purl.org/dc/terms/";
+    class Property extends AbstractProperty {
 
-        protected $label = "";
+        private $uri = "http://purl.org/dc/terms/";
 
-        protected $name = "dcterms";
+        private $label = "";
 
-        protected $description = "A Dublin Core Terms Property";
+        private $name = "dcterms";
 
-        protected $value;
+        private $description = "A Dublin Core Terms Property";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

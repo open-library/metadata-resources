@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\SKOS;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://www.w3.org/2009/08/skos-reference/skos.html#";
+    class Property extends AbstractProperty{
 
-        protected $label = "";
+        private $uri = "http://www.w3.org/2009/08/skos-reference/skos.html#";
 
-        protected $name = "skos";
+        private $label = "";
 
-        protected $description = "Simple Knowledge Organisation System";
+        private $name = "skos";
 
-        protected $value;
+        private $description = "Simple Knowledge Organisation System";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

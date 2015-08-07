@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\VIVO;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://vivoweb.org/ontology/core#";
+    class Property extends AbstractProperty{
 
-        protected $label = "";
+        private $uri = "http://vivoweb.org/ontology/core#";
 
-        protected $name = "vivo";
+        private $label = "";
 
-        protected $description = "A VIVO Property";
+        private $name = "vivo";
 
-        protected $value;
+        private $description = "A VIVO Property";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

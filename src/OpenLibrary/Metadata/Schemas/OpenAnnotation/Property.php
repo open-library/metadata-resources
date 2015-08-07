@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\OpenAnnotation;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://www.w3.org/ns/oa#";
+    class Property extends AbstractProperty {
 
-        protected $label = "";
+        private $uri = "http://www.w3.org/ns/oa#";
 
-        protected $name = "oa";
+        private $label = "";
 
-        protected $description = "Open Annotation Data Model";
+        private $name = "oa";
 
-        protected $value;
+        private $description = "Open Annotation Data Model";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

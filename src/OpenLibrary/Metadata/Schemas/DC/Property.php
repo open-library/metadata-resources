@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\DC;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+    class Property extends AbstractProperty {
 
-        protected $label = "";
+        private $uri = "http://purl.org/dc/elements/1.1/";
 
-        protected $name = "dc";
+        private $label = "";
 
-        protected $description = "A Dublin Core Elements Property";
+        private $name = "dc";
 
-        protected $value;
+        private $description = "A Dublin Core Elements Property";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

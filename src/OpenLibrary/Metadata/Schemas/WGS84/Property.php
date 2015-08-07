@@ -2,17 +2,19 @@
 
     namespace OpenLibrary\Metadata\Schemas\WGS84;
 
-    class Property {
+    use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-        protected $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
+    class Property extends AbstractProperty {
 
-        protected $label = "";
+        private $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
 
-        protected $name = "wgs84_pos";
+        private $label = "";
 
-        protected $description = "Basic Geo (WGS84 Lat/Long) Property";
+        private $name = "wgs84_pos";
 
-        protected $value;
+        private $description = "Basic Geo (WGS84 Lat/Long) Property";
+
+        private $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
