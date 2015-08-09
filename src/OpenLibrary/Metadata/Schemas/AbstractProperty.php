@@ -16,28 +16,28 @@
 
         private $attributes = [];
 
-        public function getAttributes(){
+        public function getAttributes () {
             return $this->attributes;
         }
 
-        public function setAttributes($array){
+        public function setAttributes ($array) {
             $this->attributes = $array;
         }
 
-        public function getAttribute($attr){
-            if(isset($this->attributes[$attr])){
-                return $this->attributes[$attr];
+        public function getAttribute ($attr) {
+            if(isset($this->attributes[ $attr ])) {
+                return $this->attributes[ $attr ];
             }
             return false;
         }
 
-        public function setAttribute($k,$v){
-            $this->attributes[$k] = $v;
+        public function setAttribute ($k, $v) {
+            $this->attributes[ $k ] = $v;
         }
 
-        public function unsetAttribute($attr) {
-            if(isset($this->attributes[$attr])){
-                unset($this->attributes[$attr]);
+        public function unsetAttribute ($attr) {
+            if(isset($this->attributes[ $attr ])) {
+                unset($this->attributes[ $attr ]);
                 return true;
             }
             return false;
