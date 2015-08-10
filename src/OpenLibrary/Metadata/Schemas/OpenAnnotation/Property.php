@@ -22,7 +22,7 @@
             }
 
             if($name){
-                $this->name .= ".{$name}";
+                $this->name .= ":{$name}";
             }
 
             if($label){
