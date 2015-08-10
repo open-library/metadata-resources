@@ -1,6 +1,6 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties;
+    namespace OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\Annotation;
 
     use OpenLibrary\Metadata\Schemas\OpenAnnotation\Property;
 

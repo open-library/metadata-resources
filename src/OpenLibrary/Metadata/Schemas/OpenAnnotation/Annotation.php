@@ -2,8 +2,8 @@
 
     namespace OpenLibrary\Metadata\Schemas\OpenAnnotation;
 
-    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\HasBody;
-    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\HasTarget;
+    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\Annotation\HasBody;
+    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\Annotation\HasTarget;
 
     /**
      * Class Alternative
