@@ -4,7 +4,6 @@
 
     use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\HasBody;
     use OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\HasTarget;
-    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Property;
 
     /**
      * Class Alternative
