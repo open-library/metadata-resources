@@ -13,7 +13,6 @@
     /**
      * Class Description
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Description extends Property
     {

@@ -7,7 +7,6 @@
     /**
      * Class Available
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Available extends Property
     {

@@ -13,8 +13,6 @@
 
     /**
      * Class Place
-     *
-     * @package OpenLibrary\Metadata\Schemas\EDM
      */
     trait Place
     {

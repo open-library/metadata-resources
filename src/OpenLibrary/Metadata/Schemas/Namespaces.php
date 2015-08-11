@@ -11,7 +11,6 @@
     /**
      * Class Namespaces
      *
-     * @package OpenLibrary\Objects\GenericRepository\Namespaces
      */
     class Namespaces
     {

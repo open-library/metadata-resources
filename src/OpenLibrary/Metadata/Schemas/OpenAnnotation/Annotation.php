@@ -7,8 +7,6 @@
 
     /**
      * Class Alternative
-     *
-     * @package OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties
      */
     class Annotation extends Property
     {

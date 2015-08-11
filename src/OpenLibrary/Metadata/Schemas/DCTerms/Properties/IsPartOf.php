@@ -7,7 +7,6 @@
     /**
      * Class Date
      *
-     * @package OpenLibrary\Metadata\Schemas\DC\Properties
      */
     class IsPartOf extends Property
     {

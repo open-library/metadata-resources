@@ -6,7 +6,6 @@
     /**
      * Class Created
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Created extends Property
     {

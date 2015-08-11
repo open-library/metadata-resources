@@ -6,7 +6,6 @@
     /**
      * Class Coverage
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Coverage extends Property
     {

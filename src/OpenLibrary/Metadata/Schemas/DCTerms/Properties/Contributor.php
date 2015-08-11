@@ -7,7 +7,6 @@
     /**
      * Class Contributor
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Contributor extends Property
     {

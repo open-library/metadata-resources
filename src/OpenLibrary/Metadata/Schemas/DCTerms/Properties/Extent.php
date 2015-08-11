@@ -7,7 +7,6 @@
     /**
      * Class Extent
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Extent extends Property
     {

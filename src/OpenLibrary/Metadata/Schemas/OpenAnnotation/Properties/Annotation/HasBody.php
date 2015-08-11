@@ -6,8 +6,6 @@
 
     /**
      * Class HasBody
-     *
-     * @package OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties
      */
     class HasBody extends Property
     {

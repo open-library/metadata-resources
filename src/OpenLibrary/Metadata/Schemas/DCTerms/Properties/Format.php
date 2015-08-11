@@ -13,7 +13,6 @@
     /**
      * Class Format
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Format extends Property
     {

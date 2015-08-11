@@ -7,7 +7,6 @@
     /**
      * Class Date
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Date extends Property
     {

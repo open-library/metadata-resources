@@ -7,7 +7,6 @@
     /**
      * Class Alternative
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Alternative extends Property
     {

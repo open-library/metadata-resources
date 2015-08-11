@@ -6,7 +6,6 @@
     /**
      * Class Creator
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Creator extends Property
     {

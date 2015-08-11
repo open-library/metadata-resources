@@ -13,7 +13,6 @@
     /**
      * Class Title
      *
-     * @package OpenLibrary\Metadata\Schemas\DCTerms\Properties
      */
     class Title extends Property
     {

@@ -6,8 +6,6 @@
 
     /**
      * Class HasTarget
-     *
-     * @package OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties
      */
     class HasTarget extends Property
     {
