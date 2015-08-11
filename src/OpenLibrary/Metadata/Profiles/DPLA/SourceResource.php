@@ -220,6 +220,148 @@
             return $this->Type;
         }
 
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setAccessIdentifier ($value, $label = false) {
 
-        
+            $this->AccessIdentifier = new Schemas\DCTerms\Properties\Identifier($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setAlternateTitle ($value, $label = false) {
+
+            $this->AlternateTitle = new Schemas\DCTerms\Properties\Alternative ($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setCollection ($value, $label = false) {
+
+            $this->Collection = new Schemas\DCTerms\Properties\IsPartOf ($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setContributor ($value, $label = false) {
+
+            $this->Contributor = new Schemas\DCTerms\Properties\Contributor($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setCreator ($value, $label = false) {
+
+            $this->Creator = new Schemas\DCTerms\Properties\Creator($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setDate ($value, $label = false) {
+
+            $this->Date = new Schemas\DC\Properties\Date($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setDescription ($value, $label = false) {
+
+            $this->Description = new Schemas\DCTerms\Properties\Description($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setExtent ($value, $label = false) {
+
+            $this->Extent = new Schemas\DCTerms\Properties\Extent($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setGenre ($value, $label = false) {
+
+            $this->Genre = new Schemas\EDM\Properties\HasType($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setGeographicLocation ($value, $label = false) {
+
+            $this->GeographicLocation = new Schemas\DCTerms\Properties\Spatial($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setLanguage ($value, $label = false) {
+
+            $this->Language = new Schemas\DCTerms\Properties\Language($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setProjectWebsite ($value, $label = false) {
+
+            $this->ProjectWebsite = new Schemas\DCTerms\Properties\Relation($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setPublisher ($value, $label = false) {
+
+            $this->Publisher = new Schemas\DCTerms\Properties\Publisher($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setSubject ($value, $label = false) {
+
+            $this->Subject = new Schemas\DCTerms\Properties\Subject($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setTitle ($value, $label = false) {
+
+            $this->Title = new Schemas\DCTerms\Properties\Title($value, $label);
+        }
+
+        /**
+         * @param            $value
+         * @param bool|false $label
+         */
+        public function setType ($value, $label = false) {
+
+            $this->Type = new Schemas\DCTerms\Properties\Type($value, $label);
+        }
+
     }
