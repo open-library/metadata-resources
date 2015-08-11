@@ -13,11 +13,6 @@
     trait SourceResource {
 
         /**
-         * @var Schemas\DCTerms\Properties\Identifier
-         */
-        protected $AccessIdentifier;
-
-        /**
          * @var Schemas\DCTerms\Properties\Alternative
          */
         protected $AlternateTitle;
@@ -63,6 +58,11 @@
         protected $GeographicLocation;
 
         /**
+         * @var Schemas\DCTerms\Properties\Identifier
+         */
+        protected $Identifier;
+
+        /**
          * @var Schemas\DCTerms\Properties\Language
          */
         protected $Language;
@@ -95,9 +95,9 @@
         /**
          * @return Schemas\DCTerms\Properties\Identifier
          */
-        public function getAccessIdentifier () {
+        public function getIdentifier () {
 
-            return $this->AccessIdentifier;
+            return $this->Identifier;
         }
 
         /**
@@ -224,9 +224,9 @@
          * @param            $value
          * @param bool|false $label
          */
-        public function setAccessIdentifier ($value, $label = false) {
+        public function setIdentifier ($value, $label = false) {
 
-            $this->AccessIdentifier = new Schemas\DCTerms\Properties\Identifier($value, $label);
+            $this->Identifier = new Schemas\DCTerms\Properties\Identifier($value, $label);
         }
 
         /**
