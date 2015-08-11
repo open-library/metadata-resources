@@ -91,4 +91,9 @@
          * @var Schemas\DCTerms\Properties\Type
          */
         private $Type;
+
+        public function setAccessIdentifier ($value, $label = false) {
+
+            $this->AccessIdentifier = new Schemas\DCTerms\Properties\Identifier($value, $label);
+        }
     }
