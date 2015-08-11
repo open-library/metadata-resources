@@ -23,7 +23,7 @@
         protected $Rights;
 
         /**
-         * @var Schemas\DCTerms\Properties\Issued
+         * @var Schemas\DCTerms\Properties\Available
          */
-        protected $DateIssued;
+        protected $DateAvailable;
     }
