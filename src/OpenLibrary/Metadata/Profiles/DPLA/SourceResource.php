@@ -15,85 +15,211 @@
         /**
          * @var Schemas\DCTerms\Properties\Identifier
          */
-        private $AccessIdentifier;
+        protected $AccessIdentifier;
 
         /**
          * @var Schemas\DCTerms\Properties\Alternative
          */
-        private $AlternateTitle;
+        protected $AlternateTitle;
 
         /**
          * @var Schemas\DCTerms\Properties\IsPartOf
          */
-        private $Collection;
+        protected $Collection;
 
         /**
          * @var Schemas\DCTerms\Properties\Contributor
          */
-        private $Contributor;
+        protected $Contributor;
 
         /**
          * @var Schemas\DCTerms\Properties\Creator
          */
-        private $Creator;
+        protected $Creator;
 
         /**
          * @var Schemas\DC\Properties\Date
          */
-        private $Date;
+        protected $Date;
 
         /**
          * @var Schemas\DCTerms\Properties\Description
          */
-        private $Description;
+        protected $Description;
 
         /**
          * @var Schemas\DCTerms\Properties\Extent
          */
-        private $Extent;
+        protected $Extent;
 
         /**
          * @var Schemas\EDM\Properties\HasType
          */
-        private $Genre;
+        protected $Genre;
 
         /**
          * @var Schemas\DCTerms\Properties\Spatial
          */
-        private $GeographicLocation;
+        protected $GeographicLocation;
 
         /**
          * @var Schemas\DCTerms\Properties\Language
          */
-        private $Language;
+        protected $Language;
 
         /**
          * @var Schemas\DCTerms\Properties\Relation
          */
-        private $ProjectWebsite;
+        protected $ProjectWebsite;
 
         /**
          * @var Schemas\DCTerms\Properties\Publisher
          */
-        private $Publisher;
+        protected $Publisher;
 
         /**
          * @var Schemas\DCTerms\Properties\Subject
          */
-        private $Subject;
+        protected $Subject;
 
         /**
          * @var Schemas\DCTerms\Properties\Title
          */
-        private $Title;
+        protected $Title;
 
         /**
          * @var Schemas\DCTerms\Properties\Type
          */
-        private $Type;
+        protected $Type;
 
-        public function setAccessIdentifier ($value, $label = false) {
+        /**
+         * @return Schemas\DCTerms\Properties\Identifier
+         */
+        public function getAccessIdentifier () {
 
-            $this->AccessIdentifier = new Schemas\DCTerms\Properties\Identifier($value, $label);
+            return $this->AccessIdentifier;
         }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Alternative
+         */
+        public function getAlternateTitle () {
+
+            return $this->AlternateTitle;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\IsPartOf
+         */
+        public function getCollection () {
+
+            return $this->Collection;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Contributor
+         */
+        public function getContributor () {
+
+            return $this->Contributor;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Creator
+         */
+        public function getCreator () {
+
+            return $this->Creator;
+        }
+
+        /**
+         * @return Schemas\DC\Properties\Date
+         */
+        public function getDate () {
+
+            return $this->Date;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Description
+         */
+        public function getDescription () {
+
+            return $this->Description;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Extent
+         */
+        public function getExtent () {
+
+            return $this->Extent;
+        }
+
+        /**
+         * @return Schemas\EDM\Properties\HasType
+         */
+        public function getGenre () {
+
+            return $this->Genre;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Spatial
+         */
+        public function getGeographicLocation () {
+
+            return $this->GeographicLocation;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Language
+         */
+        public function getLanguage () {
+
+            return $this->Language;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Relation
+         */
+        public function getProjectWebsite () {
+
+            return $this->ProjectWebsite;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Publisher
+         */
+        public function getPublisher () {
+
+            return $this->Publisher;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Subject
+         */
+        public function getSubject () {
+
+            return $this->Subject;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Title
+         */
+        public function getTitle () {
+
+            return $this->Title;
+        }
+
+        /**
+         * @return Schemas\DCTerms\Properties\Type
+         */
+        public function getType () {
+
+            return $this->Type;
+        }
+
+
+        
     }
