@@ -3,13 +3,13 @@
     namespace OpenLibrary\Metadata\Schemas\EDM\Properties;
     use OpenLibrary\Metadata\Schemas\EDM\Property;
 
-    class HasView extends Property
+    class AggregatedCHO extends Property
     {
-        protected $uri = "hasView";
+        protected $uri = "aggregatedCHO";
 
-        protected $label = "Has View";
+        protected $label = "Digital Resource Original Record";
 
-        protected $name = "hasView";
+        protected $name = "aggregatedCHO";
 
         public function __construct($value,$label = false){
             if(!$label){

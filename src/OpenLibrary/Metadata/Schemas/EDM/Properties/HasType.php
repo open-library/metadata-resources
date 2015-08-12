@@ -9,7 +9,7 @@
 
         protected $label = "Has Type";
 
-        protected $name = "hasType";//becomes dc.contributor
+        protected $name = "hasType";
 
         public function __construct($value,$label = false){
             if(!$label){
