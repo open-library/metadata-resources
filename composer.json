@@ -19,6 +19,12 @@
             "email": "stefan.khan-kernahan@ubc.ca",
             "homepage": "http://skkit.com",
             "role": "Creator/Developer"
+        },
+        {
+            "name": "Sean McNamara",
+            "email": "sean.mcnamara@ubc.ca",
+            "homepage": "http://seanmcn.com",
+            "role": "Backend Developer"
         }
     ],
     "support": {
