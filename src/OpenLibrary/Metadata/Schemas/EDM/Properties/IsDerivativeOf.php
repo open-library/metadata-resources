@@ -3,13 +3,13 @@
     namespace OpenLibrary\Metadata\Schemas\EDM\Properties;
     use OpenLibrary\Metadata\Schemas\EDM\Property;
 
-    class CurrentLocation extends Property
+    class IsDerivativeOf extends Property
     {
-        protected $uri = "currentLocation";
+        protected $uri = "isDerivativeOf";
 
-        protected $label = "Current Location";
+        protected $label = "Translation";
 
-        protected $name = "currentLocation";
+        protected $name = "isDerivativeOf";
 
         public function __construct($value,$label = false){
             if(!$label){
