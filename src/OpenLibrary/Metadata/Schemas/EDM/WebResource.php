@@ -179,19 +179,4 @@
             $this->DateIssued = $DateIssued;
         }
 
-        /**
-         * @return Properties\IsShownAt
-         */
-        public function getIsShownAt()
-        {
-            return $this->IsShownAt;
-        }
-
-        /**
-         * @param Properties\IsShownAt $IsShownAt
-         */
-        public function setIsShownAt($IsShownAt)
-        {
-            $this->IsShownAt = $IsShownAt;
-        }
     }
