@@ -1,4 +1,7 @@
 <?php
+
+    namespace OpenLibrary\Metadata\Profiles\EDM;
+
     use OpenLibrary\Metadata\Schemas\EDM\Properties\IsShownAt;
 
     /**
