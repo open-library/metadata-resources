@@ -14,6 +14,8 @@
 
         private $value;
 
+        protected $namespaceVariableSeparator = ".";
+
         private $attributes = [];
 
         public function getAttributes () {
