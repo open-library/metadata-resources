@@ -14,7 +14,24 @@
 
         private $value;
 
-        protected $namespaceVariableSeparator = ".";
+        protected $namespaceVariableSeparator = ":";
+
+        /**
+         * @return string
+         */
+        protected function getNamespaceVariableSeparator ()
+        {
+            return $this->namespaceVariableSeparator;
+        }
+
+        /**
+         * @param string $namespaceVariableSeparator
+         */
+        protected function setNamespaceVariableSeparator ($namespaceVariableSeparator)
+        {
+            $this->namespaceVariableSeparator = $namespaceVariableSeparator;
+        }
+
 
         private $attributes = [];
 
