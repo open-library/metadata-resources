@@ -6,15 +6,15 @@
 
     class Property extends AbstractProperty {
 
-        private $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
+        protected $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
 
-        private $label = "";
+        protected $label = "";
 
-        private $name = "wgs84_pos";
+        protected $name = "wgs84_pos";
 
-        private $description = "Basic Geo (WGS84 Lat/Long) Property";
+        protected $description = "Basic Geo (WGS84 Lat/Long) Property";
 
-        private $value;
+        protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

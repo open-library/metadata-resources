@@ -6,15 +6,15 @@
 
     class Property extends AbstractProperty {
 
-        private $uri = "http://www.europeana.eu/schemas/edm/";
+        protected $uri = "http://www.europeana.eu/schemas/edm/";
 
-        private $label = "";
+        protected $label = "";
 
-        private $name = "edm";
+        protected $name = "edm";
 
-        private $description = "A Europeana Data Model Property";
+        protected $description = "A Europeana Data Model Property";
 
-        private $value;
+        protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

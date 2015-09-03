@@ -6,15 +6,15 @@
 
     class Property extends AbstractProperty {
 
-        private $uri = "http://www.w3.org/ns/oa#";
+        protected $uri = "http://www.w3.org/ns/oa#";
 
-        private $label = "";
+        protected $label = "";
 
-        private $name = "oa";
+        protected $name = "oa";
 
-        private $description = "Open Annotation Data Model";
+        protected $description = "Open Annotation Data Model";
 
-        private $value;
+        protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){

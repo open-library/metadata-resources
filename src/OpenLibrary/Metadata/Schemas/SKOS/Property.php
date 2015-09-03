@@ -6,15 +6,15 @@
 
     class Property extends AbstractProperty{
 
-        private $uri = "http://www.w3.org/2009/08/skos-reference/skos.html#";
+        protected $uri = "http://www.w3.org/2009/08/skos-reference/skos.html#";
 
-        private $label = "";
+        protected $label = "";
 
-        private $name = "skos";
+        protected $name = "skos";
 
-        private $description = "Simple Knowledge Organisation System";
+        protected $description = "Simple Knowledge Organisation System";
 
-        private $value;
+        protected $value;
 
         public function __construct($value, $uri = false, $name = false, $label = false){
             if($uri){
