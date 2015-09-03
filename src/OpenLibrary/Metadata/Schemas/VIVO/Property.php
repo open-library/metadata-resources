@@ -6,28 +6,20 @@
 
     class Property extends AbstractProperty{
 
-        private $uri = "http://vivoweb.org/ontology/core#";
-
-        private $label = "";
-
-        private $name = "vivo";
-
-        private $description = "A VIVO Property";
-
-        private $value;
-
-        public function __construct($value, $uri = false, $name = false, $label = false){
-            if($uri){
+        public function __construct($value, $uri = 'http://vivoweb.org/ontology/core#', $name = 'vivo', $label = ''){
+            if($uri !== ''){
                 $this->uri .= "{$uri}";
             }
 
-            if($name){
+            if($name !== ''){
                 $this->name .= "{$this->namespaceVariableSeparator}{$name}";
             }
 
-            if($label){
+            if($label !== ''){
                 $this->label = $label;
             }
+
+            $this->description = 'A VIVO Property';
 
             $this->value = $value;
         }

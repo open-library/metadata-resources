@@ -4,17 +4,17 @@
 
     abstract class AbstractProperty {
 
-        private $uri;
+        protected $uri;
 
-        private $label;
+        protected $label;
 
-        private $name;
+        protected $name;
 
-        private $description;
+        protected $description;
 
-        private $value;
+        protected $value;
 
-        protected $namespaceVariableSeparator = ":";
+        protected $namespaceVariableSeparator = ':';
 
         /**
          * @return string
