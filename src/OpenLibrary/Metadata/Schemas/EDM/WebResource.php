@@ -15,22 +15,22 @@
         /**
          * @var string
          */
-        private $uri = "http://www.europeana.eu/schemas/edm/WebResource";
+        private $uri = 'http://www.europeana.eu/schemas/edm/WebResource';
 
         /**
          * @var bool|string
          */
-        private $label = "WebResource";
+        private $label = 'WebResource';
 
         /**
          * @var string
          */
-        private $name = "edm:WebResource";
+        private $name = 'edm:WebResource';
 
         /**
          * @var string
          */
-        private $description = "A Europeana Data Model Class";
+        private $description = 'A Europeana Data Model Class';
 
         /**
          * @var Schemas\DC\Properties\Format

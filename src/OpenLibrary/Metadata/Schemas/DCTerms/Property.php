@@ -6,13 +6,13 @@
 
     class Property extends AbstractProperty {
 
-        protected $uri = "http://purl.org/dc/terms/";
+        protected $uri = 'http://purl.org/dc/terms/';
 
-        protected $label = "";
+        protected $label = '';
 
-        protected $name = "dcterms";
+        protected $name = 'dcterms';
 
-        protected $description = "A Dublin Core Terms Property";
+        protected $description = 'A Dublin Core Terms Property';
 
         protected $value;
 
