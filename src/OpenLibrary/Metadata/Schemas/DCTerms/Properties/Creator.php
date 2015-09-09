@@ -10,13 +10,27 @@
      */
     class Creator extends Property {
 
+        private $uriPart = 'creator';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'creator';//Term Name: #name
+
         /**
          * @param string $value
          * @param string $label
+         * @param array  $attrs
          */
-        public function __construct ($value, $label = 'Creator') {
+        public function __construct ($value, $label = 'Creator', array $attrs = [])
+        {
+            # value, uri (whats the element name in the uri), name (element name in the spec), label)
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-            # value, uri, name, label
-            parent::__construct($value, 'creator', 'creator', $label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = '	An entity primarily responsible for making the resource.';
+            $d [] = 'Examples of a Contributor include a person, an organization, or a service.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

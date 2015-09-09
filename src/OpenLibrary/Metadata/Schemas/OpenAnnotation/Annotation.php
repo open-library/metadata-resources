@@ -33,14 +33,14 @@
          * @param            $hasTarget
          * @param bool|false $label
          */
-        public function __construct($hasBody, $hasTarget, $label = false){
+        public function __construct($hasBody, $hasTarget = '', $label = false){
             if(!$label){
                 $label = $this->label;
             }
 
             $value = new HasBody($hasBody);
 
-            $this->hasTarget = new HasTarget($hasTarget);
+            $this->hasTarget = new HasTarget($hasTarget);# should be the doi | annotations are embedded, so this is technically optional
 
             parent::__construct($value,$this->uri,$this->name,$label);
         }

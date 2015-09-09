@@ -10,29 +10,26 @@
      */
     class Available extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "available";
+        private $uriPart = 'available';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'available';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Available";
+        public function __construct ($value, $label = 'Date Available', array $attrs = [])
+        {
+            # value, uri (whats the element name in the uri), name (element name in the spec), label)
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "available";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'Date (often a range) that the resource became or will become available.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

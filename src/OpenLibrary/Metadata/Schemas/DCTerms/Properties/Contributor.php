@@ -10,29 +10,27 @@
      */
     class Contributor extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "contributor";
+        private $uriPart = 'contributor';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'contributor';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Contributor";
+        public function __construct ($value, $label = 'Contributor', array $attrs = [])
+        {
+            # value, uri (whats the element name in the uri), name (element name in the spec), label)
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "contributor";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'An entity responsible for making contributions to the resource.';
+            $d [] = 'Examples of a Contributor include a person, an organization, or a service.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

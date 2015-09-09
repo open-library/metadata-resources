@@ -5,9 +5,9 @@
      * Date: 10 Aug 15
      * Time: 21:52
      */
-    
+
     namespace OpenLibrary\Metadata\ControlledVocabularies\DCMIType;
-    
+
     interface DCMIType {
 
         const Collection            = 'Collection';
