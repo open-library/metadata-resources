@@ -1,37 +1,22 @@
 <?php
 
     namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
+
     use OpenLibrary\Metadata\Schemas\DCTerms\Property;
 
     /**
      * Class Creator
      *
      */
-    class Creator extends Property
-    {
-        /**
-         * @var string
-         */
-        protected $uri = "creator";
+    class Creator extends Property {
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
          */
-        protected $label = "Creator";
+        public function __construct ($value, $label = 'Creator') {
 
-        /**
-         * @var string
-         */
-        protected $name = "creator";//becomes dc.contributor
-
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            # value, uri, name, label
+            parent::__construct($value, 'creator', 'creator', $label);
         }
     }

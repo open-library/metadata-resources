@@ -10,13 +10,13 @@
     
     interface DCMIType {
 
-        const Collection = "Collection";
-        const Dataset = "Dataset";
-        const Event = "Event";
-        const Image = "Image";
-        const InteractiveResource = "Interactive Resource";
-        const Service = "Service";
-        const Software = "Software";
-        const Sound = "Sound";
-        const Text = "Text";
+        const Collection            = 'Collection';
+        const Dataset               = 'Dataset';
+        const Event                 = 'Event';
+        const Image                 = 'Image';
+        const InteractiveResource   = 'Interactive Resource';
+        const Service               = 'Service';
+        const Software              = 'Software';
+        const Sound                 = 'Sound';
+        const Text                  = 'Text';
     }
