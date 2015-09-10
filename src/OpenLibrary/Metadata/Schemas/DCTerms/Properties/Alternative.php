@@ -21,7 +21,10 @@
          */
         public function __construct ($value, $label = 'Alternative Title', array $attrs = [])
         {
-            # value, uri (whats the element name in the uri), name (element name in the spec), label)
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
             parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
             $d = [];

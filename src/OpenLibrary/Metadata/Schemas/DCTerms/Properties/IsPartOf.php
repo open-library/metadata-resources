@@ -10,29 +10,29 @@
      */
     class IsPartOf extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "isPartOf";
+        private $uriPart = 'isPartOf';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'isPartOf';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "IsPartOf";
+        public function __construct ($value, $label = 'Is Part Of', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "isPartOf";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A related resource in which the described resource is physically or logically included.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

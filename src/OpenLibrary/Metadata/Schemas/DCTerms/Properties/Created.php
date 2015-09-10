@@ -9,29 +9,29 @@
      */
     class Created extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "created";
+        private $uriPart = 'created';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'created';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Created";
+        public function __construct ($value, $label = 'Date Created', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "created";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'Date of creation of the resource.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

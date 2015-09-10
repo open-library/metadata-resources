@@ -9,29 +9,31 @@
      */
     class Date extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "http://purl.org/dc/elements/1.1/date";
+        private $uriPart = 'date';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'date';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Date";
+        public function __construct ($value, $label = 'Date', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "date";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A point or period of time associated with an event in the lifecycle of the resource.';
+            $d [] = 'Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
+
     }

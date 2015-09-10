@@ -12,16 +12,29 @@
 
     class Spatial extends Property
     {
-        protected $uri = "spatial";
+        private $uriPart = 'spatial';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Spatial";
+        private $namePart = 'spatial';//Term Name: #name
 
-        protected $name = "spatial";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Spatial Coverage', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'Spatial characteristics of the resource.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

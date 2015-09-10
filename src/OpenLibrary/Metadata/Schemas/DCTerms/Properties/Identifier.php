@@ -12,16 +12,30 @@
 
     class Identifier extends Property
     {
-        protected $uri = "identifier";
+        private $uriPart = 'identifier';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Identifier";
+        private $namePart = 'identifier';//Term Name: #name
 
-        protected $name = "identifier";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Identifier', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'An unambiguous reference to the resource within a given context.';
+            $d [] = 'Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

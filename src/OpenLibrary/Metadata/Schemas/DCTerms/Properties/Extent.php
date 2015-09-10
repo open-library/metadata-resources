@@ -10,29 +10,29 @@
      */
     class Extent extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "extent";
+        private $uriPart = 'extent';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'extent';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Extent";
+        public function __construct ($value, $label = 'Extent', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "extent";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'The size or duration of the resource.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

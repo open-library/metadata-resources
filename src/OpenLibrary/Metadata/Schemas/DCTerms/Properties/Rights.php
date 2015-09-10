@@ -12,16 +12,30 @@
 
     class Rights extends Property
     {
-        protected $uri = "rights";
+        private $uriPart = 'rights';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Rights";
+        private $namePart = 'rights';//Term Name: #name
 
-        protected $name = "rights";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Rights', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'Information about rights held in and over the resource.';
+            $d [] = 'Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

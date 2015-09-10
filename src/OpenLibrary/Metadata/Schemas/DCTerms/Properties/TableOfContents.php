@@ -12,16 +12,29 @@
 
     class TableOfContents extends Property
     {
-        protected $uri = "tableOfContents";
+        private $uriPart = 'tableOfContents';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Table Of Contents";
+        private $namePart = 'tableOfContents';//Term Name: #name
 
-        protected $name = "tableOfContents";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Table Of Contents', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A list of subunits of the resource.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

@@ -12,16 +12,30 @@
 
     class Publisher extends Property
     {
-        protected $uri = "publisher";
+        private $uriPart = 'publisher';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Publisher";
+        private $namePart = 'publisher';//Term Name: #name
 
-        protected $name = "publisher";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Publisher', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'An entity responsible for making the resource available.';
+            $d [] = 'Examples of a Publisher include a person, an organization, or a service.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

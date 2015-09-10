@@ -16,29 +16,29 @@
      */
     class Title extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "title";
+        private $uriPart = 'title';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'title';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Title";
+        public function __construct ($value, $label = 'Title', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "title";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'TA name given to the resource.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

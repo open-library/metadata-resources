@@ -12,16 +12,30 @@
 
     class Relation extends Property
     {
-        protected $uri = "relation";
+        private $uriPart = 'relation';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Relation";
+        private $namePart = 'relation';//Term Name: #name
 
-        protected $name = "relation";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Relation', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A related resource.';
+            $d [] = 'Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

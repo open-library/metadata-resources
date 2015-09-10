@@ -12,18 +12,29 @@
 
     class License extends Property
     {
-        protected $uri = "license";
+        private $uriPart = 'license';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "License";
+        private $namePart = 'license';//Term Name: #name
 
-        protected $name = "license";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'License', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A legal document giving official permission to do something with the resource.';
 
-            parent::setValue(new LicenseDocument($value,$label));
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

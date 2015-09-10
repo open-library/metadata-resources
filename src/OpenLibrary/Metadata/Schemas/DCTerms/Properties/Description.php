@@ -16,29 +16,30 @@
      */
     class Description extends Property
     {
-        /**
-         * @var string
-         */
-        protected $uri = "description";
+        private $uriPart = 'description';//http://purl.org/dc/terms/#uriPart
+
+        private $namePart = 'description';//Term Name: #name
 
         /**
-         * @var string
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
          */
-        protected $label = "Description";
+        public function __construct ($value, $label = 'Description', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        /**
-         * @var string
-         */
-        protected $name = "description";//becomes dc.contributor
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'An account of the resource.';
+            $d [] = 'Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.';
 
-        /**
-         * @param            $value
-         * @param bool|false $label
-         */
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

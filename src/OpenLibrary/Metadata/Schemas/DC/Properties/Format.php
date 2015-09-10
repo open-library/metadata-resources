@@ -12,16 +12,30 @@
 
     class Format extends Property
     {
-        protected $uri = "http://purl.org/dc/elements/1.1/format";
+        private $uriPart = 'format';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Format";
+        private $namePart = 'format';//Term Name: #name
 
-        protected $name = "format";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Format', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'The file format, physical medium, or dimensions of the resource.';
+            $d [] = 'Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME].';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

@@ -12,16 +12,30 @@
 
     class Language extends Property
     {
-        protected $uri = "language";
+        private $uriPart = 'language';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Language";
+        private $namePart = 'language';//Term Name: #name
 
-        protected $name = "language";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Language', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'A language of the resource.';
+            $d [] = 'Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

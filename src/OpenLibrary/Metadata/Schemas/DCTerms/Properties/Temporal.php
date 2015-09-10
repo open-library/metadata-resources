@@ -12,16 +12,29 @@
 
     class Temporal extends Property
     {
-        protected $uri = "temporal";
+        private $uriPart = 'temporal';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Temporal";
+        private $namePart = 'temporal';//Term Name: #name
 
-        protected $name = "temporal";//becomes dc.contributor
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Temporal Coverage', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'Temporal characteristics of the resource.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

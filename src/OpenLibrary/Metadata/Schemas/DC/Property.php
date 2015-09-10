@@ -6,30 +6,18 @@
 
     class Property extends AbstractProperty {
 
-        protected $uri = "http://purl.org/dc/elements/1.1/";
+        public function __construct($value, $uri = '#', $name = '#', $label = ''){
 
-        protected $label = "";
+            $this->uri = "http://purl.org/dc/elements/1.1/{$uri}";
 
-        protected $name = "dc";
+            $this->name = "dc{$this->namespaceVariableSeparator}{$name}";
 
-        protected $description = "A Dublin Core Elements Property";
-
-        protected $value;
-
-        public function __construct($value, $uri = false, $name = false, $label = false){
-            if($uri){
-                $this->uri = $uri;
-            }
-
-            if($name){
-                $this->name .= "{$this->namespaceVariableSeparator}{$name}";
-            }
-
-            if($label){
-                $this->label = $label;
-            }
+            $this->label = $label;
 
             $this->value = $value;
+
+            $this->description = 'A Dublin Core Elements Property';
+
         }
 
         /**
