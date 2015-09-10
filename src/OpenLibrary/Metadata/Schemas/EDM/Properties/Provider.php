@@ -3,18 +3,18 @@
     namespace OpenLibrary\Metadata\Schemas\EDM\Properties;
     use OpenLibrary\Metadata\Schemas\EDM\Property;
 
-    class HasType extends Property
+    class Provider extends Property
     {
-        private $uriPart = 'hasType';//http://purl.org/dc/terms/#uriPart
+        private $uriPart = 'provider';//http://purl.org/dc/terms/#uriPart
 
-        private $namePart = 'hasType';//Term Name: #name
+        private $namePart = 'provider';//Term Name: #name
 
         /**
          * @param string $value
          * @param string $label
          * @param array  $attrs
          */
-        public function __construct ($value, $label = 'Has Type', array $attrs = [])
+        public function __construct ($value, $label = 'Provider', array $attrs = [])
         {
             #    value
             #  , uri (part put in the uri)
@@ -24,7 +24,7 @@
 
             $d = [];
             $d [] = $this->getDescription ();
-            $d [] = 'This property relates a resource with the concepts it belongs to in a suitable type system such as MIME or any thesaurus that captures categories of objects in a given field. It does NOT capture aboutness';
+            $d [] = 'The name or identifier of the organization who delivers data directly to an aggregation service (e.g. Europeana)';
 
             $this->setDescription (implode ('; ', $d));
 

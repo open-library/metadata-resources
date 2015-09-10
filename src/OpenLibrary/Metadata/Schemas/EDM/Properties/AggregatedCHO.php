@@ -5,16 +5,29 @@
 
     class AggregatedCHO extends Property
     {
-        protected $uri = "aggregatedCHO";
+        private $uriPart = 'aggregatedCHO';//http://purl.org/dc/terms/#uriPart
 
-        protected $label = "Digital Resource Original Record";
+        private $namePart = 'aggregatedCHO';//Term Name: #name
 
-        protected $name = "aggregatedCHO";
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Digital Resource Original Record', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'The identifier of the source object, e.g. the Mona Lisa itself. This could be a full linked open date URI or an internal identifier';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }

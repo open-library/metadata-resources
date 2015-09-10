@@ -6,30 +6,18 @@
 
     class Property extends AbstractProperty {
 
-        protected $uri = "http://www.europeana.eu/schemas/edm/";
+        public function __construct($value, $uri = '#', $name = '#', $label = ''){
 
-        protected $label = "";
+            $this->uri = "http://www.europeana.eu/schemas/edm/{$uri}";
 
-        protected $name = "edm";
+            $this->name = "edm{$this->namespaceVariableSeparator}{$name}";
 
-        protected $description = "A Europeana Data Model Property";
-
-        protected $value;
-
-        public function __construct($value, $uri = false, $name = false, $label = false){
-            if($uri){
-                $this->uri .= "{$uri}";
-            }
-
-            if($name){
-                $this->name .= "{$this->namespaceVariableSeparator}{$name}";
-            }
-
-            if($label){
-                $this->label = $label;
-            }
+            $this->label = $label;
 
             $this->value = $value;
+
+            $this->description = 'A Europeana Data Model Property';
+
         }
 
         /**

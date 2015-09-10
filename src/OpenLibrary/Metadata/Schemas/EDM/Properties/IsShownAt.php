@@ -11,16 +11,30 @@
 
     class IsShownAt extends Property
     {
-        protected $uri = "isShownAt";
 
-        protected $label = "Is Shown At";
+        private $uriPart = 'isShownAt';//http://purl.org/dc/terms/#uriPart
 
-        protected $name = "isShownAt";
+        private $namePart = 'isShownAt';//Term Name: #name
 
-        public function __construct($value,$label = false){
-            if(!$label){
-                $label = $this->label;
-            }
-            parent::__construct($value,$this->uri,$this->name,$label);
+        /**
+         * @param string $value
+         * @param string $label
+         * @param array  $attrs
+         */
+        public function __construct ($value, $label = 'Is Shown At', array $attrs = [])
+        {
+            #    value
+            #  , uri (part put in the uri)
+            #  , name (element name in the spec)
+            #  , label
+            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
+
+            $d = [];
+            $d [] = $this->getDescription ();
+            $d [] = 'An unambiguous URL reference to the digital object on the provider’s website in its full information context.';
+
+            $this->setDescription (implode ('; ', $d));
+
+            $this->setAttributes ($attrs);
         }
     }
