@@ -1,6 +1,6 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\SKOS;
+    namespace OpenLibrary\Metadata\Schemas\FI;
 
     use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
@@ -8,15 +8,15 @@
 
         public function __construct($value, $uri = '#', $name = '#', $label = ''){
 
-            $this->uri = "http://www.w3.org/2009/08/skos-reference/skos.html#{$uri}";
+            $this->uri = "http://www.fao.org/fi/figis/devcon/fimes/doc/index.html#{$uri}";
 
-            $this->name = "skos{$this->namespaceVariableSeparator}{$name}";
+            $this->name = "fi{$this->namespaceVariableSeparator}{$name}";
 
             $this->label = $label;
 
             $this->value = $value;
 
-            $this->description = 'Simple Knowledge Organisation System';
+            $this->description = 'Fisheries Metadata Element Set (FiMES)';
 
         }
 
