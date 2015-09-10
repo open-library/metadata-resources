@@ -10,18 +10,18 @@
 
     use OpenLibrary\Metadata\Schemas\VIVO\Property;
 
-    class RelatedDegree extends Property
+    class DateIssued extends Property
     {
-        private $uriPart = 'relatedDegree';//http://purl.org/dc/terms/#uriPart
+        private $uriPart = 'dateIssued';//http://purl.org/dc/terms/#uriPart
 
-        private $namePart = 'relatedDegree';//Term Name: #name
+        private $namePart = 'dateIssued';//Term Name: #name
 
         /**
          * @param string $value
          * @param string $label
          * @param array  $attrs
          */
-        public function __construct ($value, $label = 'Related Degree', array $attrs = [])
+        public function __construct ($value, $label = 'Date Issued', array $attrs = [])
         {
             #    value
             #  , uri (part put in the uri)
@@ -31,8 +31,7 @@
 
             $d = [];
             $d [] = $this->getDescription ();
-            $d [] = 'The thesis degree';
-            $d [] = 'Extended Property specified by UBC, as per https://wiki.duraspace.org/display/VIVO/Ontology+Editor%27s+Guide';
+            $d [] = 'Date Optional Time Value, DateTime+Timezone Preferred ';
 
             $this->setDescription (implode ('; ', $d));
 
