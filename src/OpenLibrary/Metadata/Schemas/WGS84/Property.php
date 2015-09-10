@@ -6,30 +6,18 @@
 
     class Property extends AbstractProperty {
 
-        protected $uri = " http://www.w3.org/2003/01/geo/wgs84_pos#";
+        public function __construct($value, $uri = '#', $name = '#', $label = ''){
 
-        protected $label = "";
+            $this->uri = "http://www.w3.org/2003/01/geo/wgs84_pos#{$uri}";
 
-        protected $name = "wgs84_pos";
+            $this->name = "wgs84_pos{$this->namespaceVariableSeparator}{$name}";
 
-        protected $description = "Basic Geo (WGS84 Lat/Long) Property";
-
-        protected $value;
-
-        public function __construct($value, $uri = false, $name = false, $label = false){
-            if($uri){
-                $this->uri .= "{$uri}";
-            }
-
-            if($name){
-                $this->name .= "{$this->namespaceVariableSeparator}{$name}";
-            }
-
-            if($label){
-                $this->label = $label;
-            }
+            $this->label = $label;
 
             $this->value = $value;
+
+            $this->description = 'Basic Geo (WGS84 Lat/Long) Property';
+
         }
 
         /**
