@@ -24,7 +24,7 @@
 
             $d = [];
             $d [] = $this->getDescription ();
-            $d [] = 'Longitude (λ) - may be specified in DMS, Decimal Degrees etc.';
+            $d [] = 'Longitude (λ) - Specified in Decimal Degrees';
 
             $this->setDescription (implode ('; ', $d));
 
