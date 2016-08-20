@@ -1,42 +1,42 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\EDM;
+    namespace OpenLibrary\Metadata\Schemas\FI;
 
     use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
     /**
-     * Class Place
+     * Class FishingGround
      *
      * THIS IS THE COMPLETE UNIT - V1 SPEC AS OF 08SEP2015
      */
 
-    trait Place
+    trait FishingGround
     {
 
         /**
          * @var AbstractProperty
          */
-        protected $Latitude;
+        protected $Bottom;
+
 
         /**
          * @var AbstractProperty
          */
-        protected $Longitude;
+        protected $DepthOfCapture;
 
         /**
          * @return AbstractProperty
          */
-        public function getLatitude ()
+        public function getBottom ()
         {
-            return $this->Latitude;
+            return $this->Bottom;
         }
 
         /**
          * @return AbstractProperty
          */
-        public function getLongitude ()
+        public function getDepthOfCapture ()
         {
-            return $this->Longitude;
+            return $this->DepthOfCapture;
         }
-
     }

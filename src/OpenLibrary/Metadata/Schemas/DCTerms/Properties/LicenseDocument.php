@@ -5,7 +5,7 @@
      * Date: 10 Aug 15
      * Time: 22:07
      */
-    
+
     namespace OpenLibrary\Metadata\Schemas\DCTerms\Properties;
 
     use OpenLibrary\Metadata\Schemas\DCTerms\Property;

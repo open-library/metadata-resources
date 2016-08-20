@@ -1,42 +1,41 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\EDM;
+    namespace OpenLibrary\Metadata\Schemas\FI;
 
     use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
     /**
-     * Class Place
+     * Class HabitatBio
      *
      * THIS IS THE COMPLETE UNIT - V1 SPEC AS OF 08SEP2015
      */
-
-    trait Place
+    trait HabitatBio
     {
+        /**
+         * @var AbstractProperty
+         */
+        protected $DistanceOffshore;
 
         /**
          * @var AbstractProperty
          */
-        protected $Latitude;
-
-        /**
-         * @var AbstractProperty
-         */
-        protected $Longitude;
+        protected $Temperature;
 
         /**
          * @return AbstractProperty
          */
-        public function getLatitude ()
+        public function getDistanceOffshore ()
         {
-            return $this->Latitude;
+            return $this->DistanceOffshore;
         }
 
         /**
          * @return AbstractProperty
          */
-        public function getLongitude ()
+        public function getTemperature ()
         {
-            return $this->Longitude;
+            return $this->Temperature;
         }
+
 
     }

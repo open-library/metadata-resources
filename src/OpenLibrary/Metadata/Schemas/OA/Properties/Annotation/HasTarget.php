@@ -1,8 +1,8 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\OpenAnnotation\Properties\Annotation;
+    namespace OpenLibrary\Metadata\Schemas\OA\Properties\Annotation;
 
-    use OpenLibrary\Metadata\Schemas\OpenAnnotation\Property;
+    use OpenLibrary\Metadata\Schemas\OA\Property;
 
     /**
      * Class HasTarget

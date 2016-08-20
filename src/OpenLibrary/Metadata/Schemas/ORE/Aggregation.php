@@ -1,66 +1,63 @@
 <?php
 
-    namespace OpenLibrary\Metadata\Schemas\EDM;
+    namespace OpenLibrary\Metadata\Schemas\ORE;
 
     use OpenLibrary\Metadata\Schemas\AbstractProperty;
 
-    /**
-     * Class WebResource
-     *
-     * THIS IS THE COMPLETE UNIT - V1 SPEC AS OF 08SEP2015
-     */
-    trait WebResource
+
+    trait Aggregation
     {
+        /**
+         * @var AbstractProperty
+         */
+        protected $AggregatedSourceRepository;
 
         /**
          * @var AbstractProperty
          */
-        protected $DateAvailable;
+        protected $DigitalResourceOriginalRecord;
 
         /**
          * @var AbstractProperty
          */
-        protected $FileFormat;
+        protected $HasView;
 
         /**
          * @var AbstractProperty
          */
-        protected $IsShownAt;
-
-        /**
-         * @var AbstractProperty
-         */
-        protected $Rights;
+        protected $Provider;
 
         /**
          * @return AbstractProperty
          */
-        public function getDateAvailable ()
+        public function getAggregatedSourceRepository ()
         {
-            return $this->DateAvailable;
+            return $this->AggregatedSourceRepository;
         }
 
         /**
          * @return AbstractProperty
          */
-        public function getFileFormat ()
+        public function getDigitalResourceOriginalRecord ()
         {
-            return $this->FileFormat;
+            return $this->DigitalResourceOriginalRecord;
         }
 
         /**
          * @return AbstractProperty
          */
-        public function getIsShownAt ()
+        public function getHasView ()
         {
-            return $this->IsShownAt;
+            return $this->HasView;
         }
 
         /**
          * @return AbstractProperty
          */
-        public function getRights ()
+        public function getProvider ()
         {
-            return $this->Rights;
+            return $this->Provider;
         }
+
+
     }

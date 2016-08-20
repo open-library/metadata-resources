@@ -6,7 +6,7 @@
      * Time: 21:52
      */
 
-    namespace OpenLibrary\Metadata\ControlledVocabularies\DCMIType;
+    namespace OpenLibrary\Metadata\Schemas\DCMIType;
 
     interface DCMIType {
 

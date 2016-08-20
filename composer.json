@@ -1,7 +1,7 @@
 {
     "name": "open-library/metadata-resources",
     "description": "General Metadata Tools",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "keywords": [
         "doi",
         "id",
@@ -16,14 +16,10 @@
     "authors": [
         {
             "name": "Stefan Khan-Kernahan",
-            "email": "stefan.khan-kernahan@ubc.ca",
-            "homepage": "http://skkit.com",
             "role": "Creator/Developer"
         },
         {
             "name": "Sean McNamara",
-            "email": "sean.mcnamara@ubc.ca",
-            "homepage": "http://seanmcn.com",
             "role": "Backend Developer"
         }
     ],
