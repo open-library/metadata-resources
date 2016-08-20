@@ -33,7 +33,10 @@
         "monolog/monolog": "Allows more advanced logging of the application flow"
     },
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "php-ds/php-ds": "@stable"
+    },
+    "require-dev": {
     },
     "autoload": {
         "psr-4": {

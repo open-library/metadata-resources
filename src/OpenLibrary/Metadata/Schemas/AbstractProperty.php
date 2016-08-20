@@ -111,4 +111,23 @@
          * @param string $description
          */
         abstract public function setDescription ($description);
+    
+        /**
+         *
+         * Defining this here to force it upon all the properties
+         *
+         * @param mixed $unclean
+         *
+         * @return mixed
+         */
+        abstract public function sanitize ($unclean);
+    
+        /**
+         *
+         * Defining this here to force it upon all the properties
+         *
+         * @return bool
+         *
+         */
+        abstract public function isValid ();
     }

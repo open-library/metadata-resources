@@ -99,4 +99,24 @@
         {
             $this->description = $description;
         }
+    
+    
+    
+        /**
+         * @param mixed $unclean
+         *
+         * @return mixed
+         */
+        public function sanitize ($unclean)
+        {
+            // TODO: Implement sanitize() method.
+        }
+    
+        /**
+         * @return bool
+         */
+        public function isValid ()
+        {
+            // TODO: Implement isValid() method.
+        }
     }

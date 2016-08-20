@@ -31,7 +31,7 @@
             #  , uri (part put in the uri)
             #  , name (element name in the spec)
             #  , label
-            parent::__construct ($value, $this->uriPart, $this->namePart, $label);
+            parent::__construct (trim($value), $this->uriPart, $this->namePart, $label);
 
             $d = [];
             $d [] = $this->getDescription ();
@@ -41,4 +41,15 @@
 
             $this->setAttributes ($attrs);
         }
+    
+        public function sanitize ($unclean)
+        {
+            // TODO: Implement sanitize() method.
+        }
+    
+        public function isValid ()
+        {
+            // TODO: Implement isValid() method.
+        }
+    
     }
